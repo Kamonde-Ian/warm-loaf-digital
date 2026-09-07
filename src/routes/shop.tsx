@@ -6,16 +6,19 @@ import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { categories, products, type Category } from "@/lib/products";
 
-type ShopSearch = { category?: Category | "All" };
+type ShopSearch = { category?: Category | "All" | undefined };
 
 export const Route = createFileRoute("/shop")({
-  validateSearch: (search: Record<string, unknown>): ShopSearch => ({
-    category:
-      typeof search.category === "string" &&
-      (categories as readonly string[]).includes(search.category)
-        ? (search.category as Category)
-        : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): ShopSearch => {
+    const raw = search["category"];
+    return {
+      category:
+        typeof raw === "string" && (categories as readonly string[]).includes(raw)
+          ? (raw as Category)
+          : undefined,
+    };
+  },
+
   head: () => ({
     meta: [
       { title: "Menu & Shop — Tamu Bakehouse Nairobi" },
