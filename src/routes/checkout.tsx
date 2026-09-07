@@ -57,10 +57,19 @@ function Checkout() {
 
   async function pay() {
     const msisdn = normalizePhone(phone);
-    if (!name.trim()) return toast.error("Please add the name for the order.");
-    if (!msisdn) return toast.error("Enter a valid Safaricom number, e.g. 0712 345 678.");
-    if (fulfilment === "delivery" && !area.trim())
-      return toast.error("Tell us which part of Nairobi to deliver to.");
+    if (!name.trim()) {
+      toast.error("Please add the name for the order.");
+      return;
+    }
+    if (!msisdn) {
+      toast.error("Enter a valid Safaricom number, e.g. 0712 345 678.");
+      return;
+    }
+    if (fulfilment === "delivery" && !area.trim()) {
+      toast.error("Tell us which part of Nairobi to deliver to.");
+      return;
+    }
+
 
     const id = newOrderId();
     setStage("prompt");
