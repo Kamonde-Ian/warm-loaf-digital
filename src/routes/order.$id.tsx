@@ -25,7 +25,7 @@ export const Route = createFileRoute("/order/$id")({
     }
     return {
       meta: [
-        { title: `Order ${loaderData.order.id} — Tamu Bakehouse` },
+        { title: `Order ${loaderData.order.code} — Tamu Bakehouse` },
         {
           name: "description",
           content: "Your Tamu Bakehouse order confirmation and M-Pesa payment status.",
@@ -54,7 +54,7 @@ function OrderConfirmation() {
           {failed ? "Payment didn't go through" : "Asante sana, order received"}
         </h1>
         <p className="mt-3 text-muted-foreground">
-          Order <span className="font-medium text-foreground">{order.id}</span> for{" "}
+          Order <span className="font-medium text-foreground">{order.code}</span> for{" "}
           {order.customer.name}. We've sent a confirmation SMS to{" "}
           {order.customer.phone}.
         </p>
