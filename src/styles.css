@@ -103,6 +103,11 @@
   --sidebar-ring: oklch(0.565 0.132 41);
 }
 
+@keyframes tehila-bar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);

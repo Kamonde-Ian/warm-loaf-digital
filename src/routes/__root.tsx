@@ -17,6 +17,10 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { Toaster } from "@/components/ui/sonner";
+import { PageLoader } from "@/components/page-loader";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import { SocialBubble } from "@/components/social-bubble";
+import { ChatBot } from "@/components/chat-bot";
 
 function NotFoundComponent() {
   return (
@@ -109,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
@@ -138,12 +142,16 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <CartProvider>
+        <PageLoader />
         <SiteHeader />
         {/* Required: nested routes render here. */}
         <Outlet />
         <SiteFooter />
         <CartDrawer />
         <WhatsAppButton />
+        <SocialBubble />
+        <ChatBot />
+        <ScrollToTop />
         <Toaster />
       </CartProvider>
     </QueryClientProvider>

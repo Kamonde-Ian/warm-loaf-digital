@@ -3,6 +3,7 @@ import { Menu, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/lib/cart";
+import logoAsset from "@/assets/logo.jpg.asset.json";
 
 const nav = [
   { to: "/shop", label: "Shop" },
@@ -19,11 +20,16 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
-        <Link to="/" className="mr-auto flex flex-col leading-none">
-          <span className="font-display text-xl tracking-tight">Tehila Royal Kitchen</span>
+        <Link to="/" className="mr-auto flex items-center gap-2.5 leading-none">
+          <img
+            src={logoAsset.url}
+            alt="Tehila Royal Kitchen logo"
+            className="size-10 rounded-full object-cover"
+          />
+          <span className="flex flex-col leading-none"><span className="font-display text-xl tracking-tight">Tehila Royal Kitchen</span>
           <span className="text-[0.62rem] uppercase tracking-[0.28em] text-muted-foreground">
             Nairobi
-          </span>
+          </span></span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
