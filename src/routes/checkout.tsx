@@ -72,7 +72,7 @@ function Checkout() {
 
 
     setStage("prompt");
-    const push = await requestStkPush({ phone: msisdn, amount: total });
+    const push = await requestStkPush({ phone: msisdn, amount: total, reference: msisdn });
     toast.success(push.customerMessage);
 
     setStage("confirming");
