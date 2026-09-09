@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo } from "react";
 import {
   ArrowUpRight,
   Clock,
@@ -20,7 +19,9 @@ import { AdminCard, AdminShell } from "@/components/admin/admin-shell";
 import { RequireStaff } from "@/components/admin/require-staff";
 import { statusStyle } from "@/components/admin/status";
 import { formatKES } from "@/lib/products";
-import { listOrders } from "@/lib/orders";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import { listOrders } from "@/lib/orders.functions";
 import { useStaffAuth } from "@/lib/staff-auth";
 
 export const Route = createFileRoute("/admin/")({
@@ -44,7 +45,11 @@ export const Route = createFileRoute("/admin/")({
 
 function Dashboard() {
   const { user } = useStaffAuth();
-  const orders = useMemo(() => listOrders(), []);
+  const fetchOrders = useServerFn(listOrders);
+  const { data: orders = [] } = useQuery({
+    queryKey: ["orders"],
+    queryFn: () => fetchOrders(),
+  });
   const revenue = orders
     .filter((o) => o.paymentStatus === "paid")
     .reduce((n, o) => n + o.total, 0);
@@ -113,10 +118,10 @@ function Dashboard() {
                   <TableCell className="font-medium">
                     <Link
                       to="/order/$id"
-                      params={{ id: order.id }}
+                      params={{ id: order.code }}
                       className="hover:text-primary"
                     >
-                      {order.id}
+                      {order.code}
                     </Link>
                   </TableCell>
                   <TableCell>
