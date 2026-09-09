@@ -20,7 +20,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
         <Link to="/" className="mr-auto flex flex-col leading-none">
-          <span className="font-display text-xl tracking-tight">Tamu Bakehouse</span>
+          <span className="font-display text-xl tracking-tight">Tehila Royal Kitchen</span>
           <span className="text-[0.62rem] uppercase tracking-[0.28em] text-muted-foreground">
             Nairobi
           </span>

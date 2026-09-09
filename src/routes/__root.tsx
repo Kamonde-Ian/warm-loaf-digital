@@ -85,14 +85,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tamu Bakehouse — Artisan Bakery in Nairobi" },
+      { title: "Tehila Royal Kitchen — Artisan Bakery in Nairobi" },
       {
         name: "description",
         content:
           "Sourdough, cakes and mandazi baked fresh daily on Ngong Road. Order online and pay with M-Pesa.",
       },
-      { name: "author", content: "Tamu Bakehouse" },
-      { property: "og:title", content: "Tamu Bakehouse — Artisan Bakery in Nairobi" },
+      { name: "author", content: "Tehila Royal Kitchen" },
+      { property: "og:title", content: "Tehila Royal Kitchen — Artisan Bakery in Nairobi" },
       {
         property: "og:description",
         content:

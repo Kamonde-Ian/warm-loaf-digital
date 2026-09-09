@@ -12,15 +12,15 @@ import { BAKERY_PHONE, WHATSAPP_NUMBER } from "@/lib/mpesa";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Visit Us — Tamu Bakehouse, Ngong Road Nairobi" },
+      { title: "Visit Us — Tehila Royal Kitchen, Ngong Road Nairobi" },
       {
         name: "description",
         content:
-          "Find Tamu Bakehouse on Ngong Road, Nairobi. Opening hours, phone, WhatsApp orders and a message form for enquiries.",
+          "Find Tehila Royal Kitchen on Ngong Road, Nairobi. Opening hours, phone, WhatsApp orders and a message form for enquiries.",
       },
       {
         property: "og:title",
-        content: "Visit Us — Tamu Bakehouse, Ngong Road Nairobi",
+        content: "Visit Us — Tehila Royal Kitchen, Ngong Road Nairobi",
       },
       {
         property: "og:description",
@@ -77,7 +77,7 @@ function Contact() {
             {
               icon: Mail,
               title: "Email",
-              body: "hello@tamubakehouse.co.ke",
+              body: "hello@tehilaroyalkitchen.co.ke",
             },
           ].map((item, i) => (
             <Reveal key={item.title} delay={i * 70}>
@@ -123,7 +123,7 @@ function Contact() {
                 inputMode="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="0712 345 678"
+                placeholder="0723 574 088"
                 className="mt-1.5"
               />
             </div>

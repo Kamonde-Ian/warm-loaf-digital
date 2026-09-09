@@ -4,7 +4,7 @@ import { WHATSAPP_NUMBER } from "@/lib/mpesa";
 export function WhatsAppButton() {
   return (
     <a
-      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Tamu Bakehouse! I'd like to place an order.")}`}
+      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Tehila Royal Kitchen! I'd like to place an order.")}`}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat to order on WhatsApp"

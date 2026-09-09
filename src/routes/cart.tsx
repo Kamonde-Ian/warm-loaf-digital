@@ -7,13 +7,13 @@ import { formatKES } from "@/lib/products";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "Your Basket — Tamu Bakehouse" },
+      { title: "Your Basket — Tehila Royal Kitchen" },
       {
         name: "description",
         content:
           "Review your bakery basket, adjust quantities and continue to M-Pesa checkout for pickup or Nairobi delivery.",
       },
-      { property: "og:title", content: "Your Basket — Tamu Bakehouse" },
+      { property: "og:title", content: "Your Basket — Tehila Royal Kitchen" },
       {
         property: "og:description",
         content: "Review your order and pay with M-Pesa.",

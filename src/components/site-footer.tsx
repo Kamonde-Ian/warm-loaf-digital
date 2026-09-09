@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border bg-cocoa text-cocoa-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-display text-2xl">Tamu Bakehouse</p>
+          <p className="font-display text-2xl">Tehila Royal Kitchen</p>
           <p className="mt-3 text-sm text-cocoa-foreground/75">
             A small bakery on Ngong Road baking with local flour, real butter and
             unhurried time.
@@ -74,7 +74,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-cocoa-foreground/15 px-4 py-5 text-center text-xs text-cocoa-foreground/60">
-        © {new Date().getFullYear()} Tamu Bakehouse · Ngong Road, Nairobi · Pay by
+        © {new Date().getFullYear()} Tehila Royal Kitchen · Ngong Road, Nairobi · Pay by
         M-Pesa
       </div>
     </footer>

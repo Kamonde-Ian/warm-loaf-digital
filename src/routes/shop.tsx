@@ -21,13 +21,13 @@ export const Route = createFileRoute("/shop")({
 
   head: () => ({
     meta: [
-      { title: "Menu & Shop — Tamu Bakehouse Nairobi" },
+      { title: "Menu & Shop — Tehila Royal Kitchen Nairobi" },
       {
         name: "description",
         content:
           "Browse breads, cakes, pastries, custom cakes and snacks with prices in KES. Filter by category, search, and order for pickup or delivery in Nairobi.",
       },
-      { property: "og:title", content: "Menu & Shop — Tamu Bakehouse Nairobi" },
+      { property: "og:title", content: "Menu & Shop — Tehila Royal Kitchen Nairobi" },
       {
         property: "og:description",
         content:

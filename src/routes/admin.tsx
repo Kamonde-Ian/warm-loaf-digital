@@ -4,10 +4,10 @@ import { StaffAuthProvider } from "@/lib/staff-auth";
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Staff Area — Tamu Bakehouse" },
+      { title: "Staff Area — Tehila Royal Kitchen" },
       {
         name: "description",
-        content: "Internal Tamu Bakehouse staff area for orders and fulfilment.",
+        content: "Internal Tehila Royal Kitchen staff area for orders and fulfilment.",
       },
       { name: "robots", content: "noindex" },
     ],

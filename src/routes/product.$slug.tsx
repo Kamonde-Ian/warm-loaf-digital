@@ -19,13 +19,13 @@ export const Route = createFileRoute("/product/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Product unavailable — Tamu Bakehouse" },
+          { title: "Product unavailable — Tehila Royal Kitchen" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
     const { product } = loaderData;
-    const title = `${product.name} — ${formatKES(product.price)} | Tamu Bakehouse`;
+    const title = `${product.name} — ${formatKES(product.price)} | Tehila Royal Kitchen`;
     return {
       meta: [
         { title },
