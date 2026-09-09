@@ -3,12 +3,14 @@ import { CheckCircle2, Clock, MapPin, XCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { formatKES } from "@/lib/products";
-import { getOrder } from "@/lib/orders";
+import { getOrderByCode } from "@/lib/orders.functions";
 import { BAKERY_PHONE } from "@/lib/mpesa";
 
 export const Route = createFileRoute("/order/$id")({
-  loader: ({ params }) => {
-    const order = getOrder(params.id);
+  loader: async ({ params }) => {
+    const order = await getOrderByCode({ data: { code: params.id } }).catch(
+      () => null,
+    );
     if (!order) throw notFound();
     return { order };
   },
