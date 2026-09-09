@@ -14,7 +14,7 @@ import {
   pollPaymentStatus,
   requestStkPush,
 } from "@/lib/mpesa";
-import { newOrderId, saveOrder, type Order } from "@/lib/orders";
+import { createOrder } from "@/lib/orders.functions";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
