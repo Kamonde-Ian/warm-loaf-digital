@@ -7,10 +7,10 @@ import { STAFF_INVITE_CODE, initials, useStaffAuth } from "@/lib/staff-auth";
 export const Route = createFileRoute("/admin/team")({
   head: () => ({
     meta: [
-      { title: "Team — Tamu Bakehouse Staff" },
+      { title: "Team — Tehila Royal Kitchen Staff" },
       {
         name: "description",
-        content: "Staff accounts with access to the Tamu Bakehouse dashboard.",
+        content: "Staff accounts with access to the Tehila Royal Kitchen dashboard.",
       },
       { name: "robots", content: "noindex" },
     ],

@@ -31,7 +31,7 @@ const ACCOUNTS_KEY = "tamu-staff-accounts-v1";
 const SESSION_KEY = "tamu-staff-session-v1";
 
 /** Code the bakery shares with new team members so the sign-up page isn't open to all. */
-export const STAFF_INVITE_CODE = "TAMU-2026";
+export const STAFF_INVITE_CODE = "TEHILA-2026";
 
 function readAccounts(): StoredAccount[] {
   if (typeof window === "undefined") return [];

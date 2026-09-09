@@ -18,17 +18,17 @@ export const Route = createFileRoute("/order/$id")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Order unavailable — Tamu Bakehouse" },
+          { title: "Order unavailable — Tehila Royal Kitchen" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
     return {
       meta: [
-        { title: `Order ${loaderData.order.code} — Tamu Bakehouse` },
+        { title: `Order ${loaderData.order.code} — Tehila Royal Kitchen` },
         {
           name: "description",
-          content: "Your Tamu Bakehouse order confirmation and M-Pesa payment status.",
+          content: "Your Tehila Royal Kitchen order confirmation and M-Pesa payment status.",
         },
         { name: "robots", content: "noindex" },
       ],
@@ -92,7 +92,7 @@ function OrderConfirmation() {
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
             {order.fulfilment === "pickup"
-              ? "Tamu Bakehouse, Ngong Road, Nairobi"
+              ? "Tehila Royal Kitchen, Ngong Road, Nairobi"
               : [order.customer.address, order.customer.area]
                   .filter(Boolean)
                   .join(", ")}

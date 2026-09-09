@@ -21,13 +21,13 @@ const values = [
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Our Story — Tamu Bakehouse, Ngong Road" },
+      { title: "Our Story — Tehila Royal Kitchen, Ngong Road" },
       {
         name: "description",
         content:
           "How a Sunday kitchen habit on Ngong Road became a small Nairobi bakery baking with local flour, real butter and unhurried time.",
       },
-      { property: "og:title", content: "Our Story — Tamu Bakehouse, Ngong Road" },
+      { property: "og:title", content: "Our Story — Tehila Royal Kitchen, Ngong Road" },
       {
         property: "og:description",
         content: "A small Nairobi bakery built on local flour and slow fermentation.",
@@ -62,7 +62,7 @@ function About() {
       <div className="mt-10 grid gap-8 md:grid-cols-2">
         <div className="space-y-4 text-base leading-relaxed text-foreground/85">
           <p>
-            Tamu began in a two-bedroom flat off Ngong Road, with a jar of starter
+            Tehila Royal Kitchen began in a two-bedroom flat off Ngong Road, with a jar of starter
             fed on flour and patience, and neighbours knocking on Sunday mornings
             for whatever came out of the oven.
           </p>

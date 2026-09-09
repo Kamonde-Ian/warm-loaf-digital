@@ -19,7 +19,7 @@ import { createOrder } from "@/lib/orders.functions";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Checkout & M-Pesa Payment — Tamu Bakehouse" },
+      { title: "Checkout & M-Pesa Payment — Tehila Royal Kitchen" },
       {
         name: "description",
         content:
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/checkout")({
       },
       {
         property: "og:title",
-        content: "Checkout & M-Pesa Payment — Tamu Bakehouse",
+        content: "Checkout & M-Pesa Payment — Tehila Royal Kitchen",
       },
       {
         property: "og:description",
@@ -62,7 +62,7 @@ function Checkout() {
       return;
     }
     if (!msisdn) {
-      toast.error("Enter a valid Safaricom number, e.g. 0712 345 678.");
+      toast.error("Enter a valid Safaricom number, e.g. 0723 574 088.");
       return;
     }
     if (fulfilment === "delivery" && !area.trim()) {
@@ -181,7 +181,7 @@ function Checkout() {
                   inputMode="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="0712 345 678"
+                  placeholder="0723 574 088"
                   className="mt-1.5 bg-card"
                 />
               </div>

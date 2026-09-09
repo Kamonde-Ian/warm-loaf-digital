@@ -9,10 +9,10 @@ import { useStaffAuth } from "@/lib/staff-auth";
 export const Route = createFileRoute("/admin/signup")({
   head: () => ({
     meta: [
-      { title: "Create Staff Account — Tamu Bakehouse" },
+      { title: "Create Staff Account — Tehila Royal Kitchen" },
       {
         name: "description",
-        content: "Create a Tamu Bakehouse staff account with your team invite code.",
+        content: "Create a Tehila Royal Kitchen staff account with your team invite code.",
       },
       { name: "robots", content: "noindex" },
     ],
@@ -51,7 +51,7 @@ function Signup() {
           <span className="grid size-10 place-items-center rounded-xl bg-primary text-primary-foreground">
             <ChefHat className="size-5" />
           </span>
-          <span className="font-display text-xl">Tamu Bakehouse</span>
+          <span className="font-display text-xl">Tehila Royal Kitchen</span>
         </div>
         <h1 className="mt-6 text-2xl">Create a staff account</h1>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -79,7 +79,7 @@ function Signup() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@tamubakehouse.co.ke"
+              placeholder="you@tehilaroyalkitchen.co.ke"
               className="h-11 rounded-xl"
             />
           </div>
@@ -103,7 +103,7 @@ function Signup() {
               required
               value={inviteCode}
               onChange={(e) => setInviteCode(e.target.value)}
-              placeholder="TAMU-XXXX"
+              placeholder="TEHILA-XXXX"
               className="h-11 rounded-xl"
             />
           </div>

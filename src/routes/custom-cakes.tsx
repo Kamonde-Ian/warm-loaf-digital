@@ -22,13 +22,13 @@ const sizes = [
 export const Route = createFileRoute("/custom-cakes")({
   head: () => ({
     meta: [
-      { title: "Custom Cake Orders — Tamu Bakehouse Nairobi" },
+      { title: "Custom Cake Orders — Tehila Royal Kitchen Nairobi" },
       {
         name: "description",
         content:
           "Design your own celebration or wedding cake: pick flavour, size, colours and message. Hand-finished in Nairobi with two days' notice.",
       },
-      { property: "og:title", content: "Custom Cake Orders — Tamu Bakehouse Nairobi" },
+      { property: "og:title", content: "Custom Cake Orders — Tehila Royal Kitchen Nairobi" },
       {
         property: "og:description",
         content:

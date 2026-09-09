@@ -57,7 +57,7 @@ export function AdminShell({
             <span className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground">
               <ChefHat className="size-5" />
             </span>
-            <span className="font-display text-lg">Tamu</span>
+            <span className="font-display text-lg">Tehila</span>
           </Link>
           <button
             type="button"

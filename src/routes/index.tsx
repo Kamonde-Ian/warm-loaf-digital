@@ -17,7 +17,7 @@ import story from "@/assets/story.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Tamu Bakehouse — Fresh Sourdough & Cakes in Nairobi" },
+      { title: "Tehila Royal Kitchen — Fresh Sourdough & Cakes in Nairobi" },
       {
         name: "description",
         content:
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Tamu Bakehouse — Fresh Sourdough & Cakes in Nairobi",
+        content: "Tehila Royal Kitchen — Fresh Sourdough & Cakes in Nairobi",
       },
       {
         property: "og:description",

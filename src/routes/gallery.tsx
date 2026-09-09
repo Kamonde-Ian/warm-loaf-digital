@@ -6,19 +6,19 @@ import story from "@/assets/story.jpg";
 
 const shots = [
   { src: story, alt: "Baker shaping dough on a floured counter at dawn" },
-  ...products.map((p) => ({ src: p.image, alt: `${p.name} at Tamu Bakehouse` })),
+  ...products.map((p) => ({ src: p.image, alt: `${p.name} at Tehila Royal Kitchen` })),
 ];
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Bakes from Tamu Bakehouse Nairobi" },
+      { title: "Gallery — Bakes from Tehila Royal Kitchen Nairobi" },
       {
         name: "description",
         content:
           "Photographs from our Ngong Road kitchen: sourdough crusts, cardamom mandazi, buttercream celebration cakes and everything in between.",
       },
-      { property: "og:title", content: "Gallery — Bakes from Tamu Bakehouse Nairobi" },
+      { property: "og:title", content: "Gallery — Bakes from Tehila Royal Kitchen Nairobi" },
       {
         property: "og:description",
         content: "A look inside our Nairobi bakery, one tray at a time.",

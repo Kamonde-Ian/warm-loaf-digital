@@ -27,7 +27,7 @@ import { useStaffAuth } from "@/lib/staff-auth";
 export const Route = createFileRoute("/admin/")({
   head: () => ({
     meta: [
-      { title: "Staff Dashboard — Tamu Bakehouse" },
+      { title: "Staff Dashboard — Tehila Royal Kitchen" },
       {
         name: "description",
         content:

@@ -22,7 +22,7 @@ import { listOrders } from "@/lib/orders.functions";
 export const Route = createFileRoute("/admin/orders")({
   head: () => ({
     meta: [
-      { title: "Orders — Tamu Bakehouse Staff" },
+      { title: "Orders — Tehila Royal Kitchen Staff" },
       {
         name: "description",
         content: "Every bakery order with fulfilment and payment status.",

@@ -52,6 +52,6 @@ export async function pollPaymentStatus(): Promise<"paid" | "failed"> {
 }
 
 export const MPESA_TILL = "247247";
-export const WHATSAPP_NUMBER = "254712345678";
-export const BAKERY_PHONE = "+254 712 345 678";
-export const BAKERY_NAME = "Tamu Bakehouse";
+export const WHATSAPP_NUMBER = "254723574088";
+export const BAKERY_PHONE = "+254 723 574 088";
+export const BAKERY_NAME = "Tehila Royal Kitchen";
