@@ -83,7 +83,12 @@ export const listStaff = createServerFn({ method: "GET" })
   });
 
 async function requireManager(
-  supabase: { rpc: (fn: "has_role", args: { _user_id: string; _role: StaffRole }) => Promise<{ data: unknown }> },
+  supabase: {
+    rpc: (
+      fn: "has_role",
+      args: { _user_id: string; _role: StaffRole },
+    ) => PromiseLike<{ data: unknown }>;
+  },
   userId: string,
 ) {
   const { data } = await supabase.rpc("has_role", { _user_id: userId, _role: "manager" });

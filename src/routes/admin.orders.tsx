@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import {
@@ -15,7 +15,9 @@ import { AdminCard, AdminShell } from "@/components/admin/admin-shell";
 import { RequireStaff } from "@/components/admin/require-staff";
 import { statusStyle } from "@/components/admin/status";
 import { formatKES } from "@/lib/products";
-import { listOrders } from "@/lib/orders";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import { listOrders } from "@/lib/orders.functions";
 
 export const Route = createFileRoute("/admin/orders")({
   head: () => ({
@@ -38,7 +40,11 @@ export const Route = createFileRoute("/admin/orders")({
 const filters = ["all", "pending", "paid", "delivery", "pickup"] as const;
 
 function Orders() {
-  const orders = useMemo(() => listOrders(), []);
+  const fetchOrders = useServerFn(listOrders);
+  const { data: orders = [] } = useQuery({
+    queryKey: ["orders"],
+    queryFn: () => fetchOrders(),
+  });
   const [filter, setFilter] = useState<(typeof filters)[number]>("all");
   const [q, setQ] = useState("");
 
@@ -52,7 +58,7 @@ function Orders() {
     const needle = q.trim().toLowerCase();
     const matchesQuery =
       !needle ||
-      o.id.toLowerCase().includes(needle) ||
+      o.code.toLowerCase().includes(needle) ||
       o.customer.name.toLowerCase().includes(needle) ||
       o.customer.phone.includes(needle);
     return matchesFilter && matchesQuery;
@@ -98,10 +104,10 @@ function Orders() {
                   <TableCell className="font-medium">
                     <Link
                       to="/order/$id"
-                      params={{ id: order.id }}
+                      params={{ id: order.code }}
                       className="hover:text-primary"
                     >
-                      {order.id}
+                      {order.code}
                     </Link>
                   </TableCell>
                   <TableCell>

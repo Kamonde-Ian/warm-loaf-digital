@@ -3,12 +3,14 @@ import { CheckCircle2, Clock, MapPin, XCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { formatKES } from "@/lib/products";
-import { getOrder } from "@/lib/orders";
+import { getOrderByCode } from "@/lib/orders.functions";
 import { BAKERY_PHONE } from "@/lib/mpesa";
 
 export const Route = createFileRoute("/order/$id")({
-  loader: ({ params }) => {
-    const order = getOrder(params.id);
+  loader: async ({ params }) => {
+    const order = await getOrderByCode({ data: { code: params.id } }).catch(
+      () => null,
+    );
     if (!order) throw notFound();
     return { order };
   },
@@ -23,7 +25,7 @@ export const Route = createFileRoute("/order/$id")({
     }
     return {
       meta: [
-        { title: `Order ${loaderData.order.id} — Tamu Bakehouse` },
+        { title: `Order ${loaderData.order.code} — Tamu Bakehouse` },
         {
           name: "description",
           content: "Your Tamu Bakehouse order confirmation and M-Pesa payment status.",
@@ -52,7 +54,7 @@ function OrderConfirmation() {
           {failed ? "Payment didn't go through" : "Asante sana, order received"}
         </h1>
         <p className="mt-3 text-muted-foreground">
-          Order <span className="font-medium text-foreground">{order.id}</span> for{" "}
+          Order <span className="font-medium text-foreground">{order.code}</span> for{" "}
           {order.customer.name}. We've sent a confirmation SMS to{" "}
           {order.customer.phone}.
         </p>

@@ -14,7 +14,7 @@ import {
   pollPaymentStatus,
   requestStkPush,
 } from "@/lib/mpesa";
-import { newOrderId, saveOrder, type Order } from "@/lib/orders";
+import { createOrder } from "@/lib/orders.functions";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
@@ -71,36 +71,47 @@ function Checkout() {
     }
 
 
-    const id = newOrderId();
     setStage("prompt");
-    const push = await requestStkPush({ phone: msisdn, amount: total, reference: id });
+    const push = await requestStkPush({ phone: msisdn, amount: total, reference: msisdn });
     toast.success(push.customerMessage);
 
     setStage("confirming");
-    const status = await pollPaymentStatus();
+    await pollPaymentStatus();
 
-    const order: Order = {
-      id,
-      createdAt: new Date().toISOString(),
-      items,
-      fulfilment,
-      customer: {
-        name: name.trim(),
-        phone: msisdn,
-        ...(area.trim() ? { area: area.trim() } : {}),
-        ...(address.trim() ? { address: address.trim() } : {}),
-        ...(note.trim() ? { note: note.trim() } : {}),
-      },
-      paymentMethod: "mpesa",
-      paymentStatus: status,
-      mpesaRef: push.checkoutRequestId,
-      total,
-      readyAt:
-        fulfilment === "pickup" ? "Tomorrow, from 8:00 AM" : "Tomorrow, 10:00 AM – 1:00 PM",
-    };
-    saveOrder(order);
-    clear();
-    navigate({ to: "/order/$id", params: { id } });
+    try {
+      const created = await createOrder({
+        data: {
+          items: items.map((item) => ({
+            productId: item.id,
+            name: item.name,
+            qty: item.qty,
+            price: item.price,
+            ...(item.unit ? { unit: item.unit } : {}),
+          })),
+          fulfilment,
+          customer: {
+            name: name.trim(),
+            phone: msisdn,
+            ...(area.trim() ? { area: area.trim() } : {}),
+            ...(address.trim() ? { address: address.trim() } : {}),
+            ...(note.trim() ? { note: note.trim() } : {}),
+          },
+          paymentMethod: "mpesa",
+          mpesaRef: push.checkoutRequestId,
+          readyAt:
+            fulfilment === "pickup"
+              ? "Tomorrow, from 8:00 AM"
+              : "Tomorrow, 10:00 AM – 1:00 PM",
+        },
+      });
+      clear();
+      navigate({ to: "/order/$id", params: { id: created.code } });
+    } catch (error) {
+      setStage("form");
+      toast.error(
+        error instanceof Error ? error.message : "Could not place that order.",
+      );
+    }
   }
 
   if (items.length === 0 && stage === "form") {
