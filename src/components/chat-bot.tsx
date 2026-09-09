@@ -126,7 +126,7 @@ export function ChatBot() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Chat with Tehila Royal Kitchen"}
-        className="fixed bottom-[10.5rem] right-5 z-40 flex size-12 items-center justify-center overflow-hidden rounded-full border-2 border-primary bg-card shadow-lift transition-transform hover:-translate-y-1"
+        className="fixed bottom-24 right-5 z-40 flex size-12 items-center justify-center overflow-hidden rounded-full border-2 border-primary bg-card shadow-lift transition-transform hover:-translate-y-1"
       >
         {open ? (
           <X className="size-5 text-foreground" />

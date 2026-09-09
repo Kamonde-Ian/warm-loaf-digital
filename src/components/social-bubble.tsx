@@ -32,7 +32,7 @@ export function SocialBubble() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="floating-side fixed bottom-24 right-5 z-40 flex flex-col items-end gap-2">
+    <div className="floating-side fixed bottom-[10.5rem] right-5 z-40 flex flex-col items-end gap-2">
       {open &&
         links.map((l, i) => (
           <a
