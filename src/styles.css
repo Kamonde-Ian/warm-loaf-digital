@@ -103,6 +103,10 @@
   --sidebar-ring: oklch(0.565 0.132 41);
 }
 
+body[data-chat-open="true"] .floating-side {
+  display: none;
+}
+
 @keyframes tehila-bar {
   from { width: 0%; }
   to { width: 100%; }

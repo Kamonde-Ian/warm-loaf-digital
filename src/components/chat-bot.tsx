@@ -103,6 +103,10 @@ export function ChatBot() {
     endRef.current?.scrollIntoView({ block: "end" });
   }, [messages, typing, open]);
 
+  useEffect(() => {
+    document.body.dataset["chatOpen"] = open ? "true" : "false";
+  }, [open]);
+
   function send(text: string) {
     const value = text.trim();
     if (!value) return;
