@@ -2,7 +2,7 @@
 
 export type StaffRole = "manager" | "staff" | "baker" | "rider";
 
-export const STAFF_INVITE_CODE = "TAMU-2026";
+export const STAFF_INVITE_CODE = "TEHILA-2026";
 
 export const staffRoles: StaffRole[] = ["manager", "staff", "baker", "rider"];
 

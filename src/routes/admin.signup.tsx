@@ -103,7 +103,7 @@ function Signup() {
               required
               value={inviteCode}
               onChange={(e) => setInviteCode(e.target.value)}
-              placeholder="TAMU-XXXX"
+              placeholder="TEHILA-XXXX"
               className="h-11 rounded-xl"
             />
           </div>
