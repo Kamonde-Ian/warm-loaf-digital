@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
-import story from "@/assets/story.jpg";
+import storyAsset from "@/assets/story.jpg.asset.json";
+
+const story = storyAsset.url;
 
 const values = [
   {

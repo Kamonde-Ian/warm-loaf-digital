@@ -80,8 +80,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-cocoa-foreground/15 px-4 py-5 text-center text-xs text-cocoa-foreground/60">
-        © {new Date().getFullYear()} Tehila Royal Kitchen · Ngong Road, Nairobi · Pay by
-        M-Pesa
+        © {new Date().getFullYear()} Tehila Royal Kitchen · Ngong Road, Nairobi ·
+        Developed by Ian Kamonde (ZidiDigital)
       </div>
     </footer>
   );

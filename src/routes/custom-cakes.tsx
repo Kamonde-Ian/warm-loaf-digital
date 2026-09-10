@@ -9,7 +9,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Reveal } from "@/components/reveal";
 import { useCart } from "@/lib/cart";
 import { formatKES } from "@/lib/products";
-import celebration from "@/assets/p-celebration.jpg";
+import celebrationAsset from "@/assets/p-celebration.jpg.asset.json";
+
+const celebration = celebrationAsset.url;
 
 const flavours = ["Red velvet", "Dark chocolate", "Vanilla bean", "Spiced carrot", "Lemon"];
 const sizes = [

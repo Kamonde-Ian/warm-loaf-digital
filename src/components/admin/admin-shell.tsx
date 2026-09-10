@@ -48,7 +48,7 @@ export function AdminShell({
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-40 w-64 border-r border-border bg-admin-surface transition-transform lg:translate-x-0",
+          "fixed inset-y-0 left-0 z-40 flex h-dvh w-[min(16rem,calc(100vw-2rem))] flex-col overflow-y-auto border-r border-border bg-admin-surface transition-transform lg:w-64 lg:translate-x-0",
           open ? "translate-x-0" : "-translate-x-full",
         )}
       >
@@ -96,7 +96,7 @@ export function AdminShell({
           })}
         </nav>
 
-        <div className="absolute inset-x-3 bottom-4 rounded-2xl bg-secondary p-4">
+        <div className="mx-3 mb-4 mt-auto rounded-2xl bg-secondary p-4">
           <p className="text-xs font-semibold">Device-only data</p>
           <p className="mt-1 text-xs text-muted-foreground">
             Orders and staff accounts are stored on this device until the bakery's
@@ -130,7 +130,7 @@ export function AdminShell({
               className="h-10 rounded-xl border-0 bg-secondary pl-9"
             />
           </div>
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ml-auto flex min-w-0 items-center gap-2">
             <button
               type="button"
               aria-label="Notifications"
