@@ -1,17 +1,32 @@
-import sourdough from "@/assets/p-sourdough.jpg";
-import wholewheat from "@/assets/p-wholewheat.jpg";
-import banana from "@/assets/p-banana.jpg";
-import milkbread from "@/assets/p-milkbread.jpg";
-import redvelvet from "@/assets/p-redvelvet.jpg";
-import chocolate from "@/assets/p-chocolate.jpg";
-import carrot from "@/assets/p-carrot.jpg";
-import mandazi from "@/assets/p-mandazi.jpg";
-import croissant from "@/assets/p-croissant.jpg";
-import cinnamon from "@/assets/p-cinnamon.jpg";
-import celebration from "@/assets/p-celebration.jpg";
-import wedding from "@/assets/p-wedding.jpg";
-import samosa from "@/assets/p-samosa.jpg";
-import cookies from "@/assets/p-cookies.jpg";
+import sourdoughAsset from "@/assets/p-sourdough.jpg.asset.json";
+import wholewheatAsset from "@/assets/p-wholewheat.jpg.asset.json";
+import bananaAsset from "@/assets/p-banana.jpg.asset.json";
+import milkbreadAsset from "@/assets/p-milkbread.jpg.asset.json";
+import redvelvetAsset from "@/assets/p-redvelvet.jpg.asset.json";
+import chocolateAsset from "@/assets/p-chocolate.jpg.asset.json";
+import carrotAsset from "@/assets/p-carrot.jpg.asset.json";
+import mandaziAsset from "@/assets/p-mandazi.jpg.asset.json";
+import croissantAsset from "@/assets/p-croissant.jpg.asset.json";
+import cinnamonAsset from "@/assets/p-cinnamon.jpg.asset.json";
+import celebrationAsset from "@/assets/p-celebration.jpg.asset.json";
+import weddingAsset from "@/assets/p-wedding.jpg.asset.json";
+import samosaAsset from "@/assets/p-samosa.jpg.asset.json";
+import cookiesAsset from "@/assets/p-cookies.jpg.asset.json";
+
+const sourdough = sourdoughAsset.url;
+const wholewheat = wholewheatAsset.url;
+const banana = bananaAsset.url;
+const milkbread = milkbreadAsset.url;
+const redvelvet = redvelvetAsset.url;
+const chocolate = chocolateAsset.url;
+const carrot = carrotAsset.url;
+const mandazi = mandaziAsset.url;
+const croissant = croissantAsset.url;
+const cinnamon = cinnamonAsset.url;
+const celebration = celebrationAsset.url;
+const wedding = weddingAsset.url;
+const samosa = samosaAsset.url;
+const cookies = cookiesAsset.url;
 
 /**
  * Placeholder catalogue.
