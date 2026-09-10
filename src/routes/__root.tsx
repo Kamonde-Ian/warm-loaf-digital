@@ -22,7 +22,7 @@ import { PageLoader } from "@/components/page-loader";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SocialBubble } from "@/components/social-bubble";
 import { ChatBot } from "@/components/chat-bot";
-import faviconAsset from "@/../public/favicon.png.asset.json";
+import faviconAsset from "@/assets/favicon.png.asset.json";
 
 function NotFoundComponent() {
   return (
