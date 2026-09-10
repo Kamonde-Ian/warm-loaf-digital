@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -21,6 +22,7 @@ import { PageLoader } from "@/components/page-loader";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SocialBubble } from "@/components/social-bubble";
 import { ChatBot } from "@/components/chat-bot";
+import faviconAsset from "@/assets/favicon.png.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -113,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", href: faviconAsset.url, type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
@@ -138,20 +140,27 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const isAdmin = useRouterState({
+    select: (state) => state.location.pathname.startsWith("/admin"),
+  });
 
   return (
     <QueryClientProvider client={queryClient}>
       <CartProvider>
         <PageLoader />
-        <SiteHeader />
+        {!isAdmin && <SiteHeader />}
         {/* Required: nested routes render here. */}
         <Outlet />
-        <SiteFooter />
-        <CartDrawer />
-        <WhatsAppButton />
-        <SocialBubble />
-        <ChatBot />
-        <ScrollToTop />
+        {!isAdmin && (
+          <>
+            <SiteFooter />
+            <CartDrawer />
+            <WhatsAppButton />
+            <SocialBubble />
+            <ChatBot />
+            <ScrollToTop />
+          </>
+        )}
         <Toaster />
       </CartProvider>
     </QueryClientProvider>

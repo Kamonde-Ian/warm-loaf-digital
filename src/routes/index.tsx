@@ -11,8 +11,11 @@ import {
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { bestsellers, categories, products } from "@/lib/products";
-import hero from "@/assets/hero.jpg";
-import story from "@/assets/story.jpg";
+import heroAsset from "@/assets/hero.jpg.asset.json";
+import storyAsset from "@/assets/story.jpg.asset.json";
+
+const hero = heroAsset.url;
+const story = storyAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
